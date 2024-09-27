@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/Nothing">
+
+    <fragment
+        android:id="@+id/Nothing"
+        android:name="de.tubs.cs.ias.admob.AA_Nothing"
+        android:label="Nothing"
+        tools:layout="@layout/nothing_state">
+
+        <action
+            android:id="@+id/action_NothingState_to_InitialState"
+            app:destination="@id/CreateObject" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreateObject"
+        android:name="de.tubs.cs.ias.admob.A_InitialState"
+        android:label="Create Object"
+        tools:layout="@layout/initial_state">
+
+        <action
+            android:id="@+id/action_InitialState_to_InquireConsent"
+            app:destination="@id/InquireConsent" />
+    </fragment>
+    <fragment
+        android:id="@+id/InquireConsent"
+        android:name="de.tubs.cs.ias.admob.B_InquireConsent"
+        android:label="Inquire Consent"
+        tools:layout="@layout/inquire_consent">
+
+        <action
+            android:id="@+id/action_InquireConsent_to_Initialize"
+            app:destination="@id/Initialize" />
+    </fragment>
+    <fragment
+        android:id="@+id/Initialize"
+        android:name="de.tubs.cs.ias.admob.C_Initialize"
+        android:label="Initialize"
+        tools:layout="@layout/initialize">
+        <action
+            android:id="@+id/action_Initialize_to_CoreFunctionality"
+            app:destination="@id/CoreFunctionality" />
+    </fragment>
+    <fragment
+        android:id="@+id/CoreFunctionality"
+        android:name="de.tubs.cs.ias.admob.D_CoreFunctionality"
+        android:label="Core Functionality"
+        tools:layout="@layout/core_functionality">
+    </fragment>
+</navigation>
